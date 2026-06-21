@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern To-Do App</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>📝 To-Do List</h1>
+
+            <button id="themeToggle" class="theme-btn" title="Toggle Theme">
+                🌙
+            </button>
+        </header>
+
+        <!-- Add Task Section -->
+        <section class="add-task-section">
+            <form id="taskForm">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter a new task..."
+                    autocomplete="off"
+                />
+
+                <button type="submit" id="addTaskBtn">
+                    ➕ Add Task
+                </button>
+            </form>
+        </section>
+
+        <!-- Search -->
+        <section class="search-section">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search tasks..."
+            />
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3 id="totalTasks">0</h3>
+                <p>Total</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="completedTasks">0</h3>
+                <p>Completed</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="pendingTasks">0</h3>
+                <p>Pending</p>
+            </div>
+
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="actions">
+            <button id="clearAllBtn" class="clear-btn">
+                🗑 Clear All Tasks
+            </button>
+        </section>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+            <div class="empty-icon">📋</div>
+            <h2>No Tasks Yet</h2>
+            <p>Add your first task to get started!</p>
+        </div>
+
+        <!-- Task List -->
+        <ul id="taskList" class="task-list"></ul>
+
+    </div>
+
+    <!-- Template for Task Item -->
+    <template id="taskTemplate">
+
+        <li class="task-item">
+
+            <div class="task-left">
+
+                <input
+                    type="checkbox"
+                    class="task-checkbox"
+                />
+
+                <span class="task-text"></span>
+
+            </div>
+
+            <div class="task-actions">
+
+                <button
+                    class="complete-btn"
+                    title="Mark Complete"
+                >
+                    ✓
+                </button>
+
+                <button
+                    class="delete-btn"
+                    title="Delete Task"
+                >
+                    🗑
+                </button>
+
+            </div>
+
+        </li>
+
+    </template>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
